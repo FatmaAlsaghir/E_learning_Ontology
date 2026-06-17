@@ -1,0 +1,34 @@
+@prefix el: <http://www.example.org/elearning-ontology#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+el:StudentShape
+    a sh:NodeShape ;
+    sh:targetClass el:Student ;
+    sh:property [
+        sh:path el:hasName ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+    ] .
+
+el:SubmissionShape
+    a sh:NodeShape ;
+    sh:targetClass el:Submission ;
+    sh:property [
+        sh:path el:submissionFor ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class el:Assignment ;
+    ] .
+
+el:GradeShape
+    a sh:NodeShape ;
+    sh:targetClass el:Grade ;
+    sh:property [
+        sh:path el:score ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:float ;
+        sh:minInclusive 0 ;
+        sh:maxInclusive 100 ;
+    ] .
