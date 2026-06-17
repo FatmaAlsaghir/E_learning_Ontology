@@ -1,0 +1,85 @@
+PREFIX el: <http://www.example.org/elearning-ontology#>
+
+
+# Query 1 – Students enrolled in Knowledge Engineering
+
+SELECT ?studentName WHERE {
+?student a el:Student ;
+el:enrolledIn el:Course_KnowledgeEng ;
+el:hasName ?studentName .
+}
+
+# Query 2 – Courses taught by Dr. Alan Smith
+
+SELECT ?courseTitle WHERE {
+el:Instructor_ProfessorSmith el:teaches ?course .
+?course el:courseTitle ?courseTitle .
+}
+
+# Query 3 – Emily Parker's grade
+
+SELECT ?score WHERE {
+el:Student_EmilyParker el:submits ?sub .
+?sub el:submissionFor el:Assignment_InitialOntology ;
+el:hasGrade ?grade .
+?grade el:score ?score .
+}
+
+# Query 4 – Feedback for Jalil Guliyev
+
+SELECT ?feedbackText WHERE {
+el:Student_JalilGuliyev el:submits ?sub .
+?sub el:hasFeedback ?fb .
+?fb el:feedbackText ?feedbackText .
+}
+
+# Query 5 – Grades above 80
+
+SELECT ?studentName ?score WHERE {
+?sub a el:Submission ;
+el:submittedBy ?student ;
+el:hasGrade ?grade .
+?grade el:score ?score .
+?student el:hasName ?studentName .
+FILTER(?score > 80)
+}
+ORDER BY DESC(?score)
+
+# Query 6 – Course prerequisites
+
+SELECT ?prereqTitle WHERE {
+el:Course_SemanticWeb el:hasPrerequisite+ ?prereq .
+?prereq el:courseTitle ?prereqTitle .
+}
+
+# Query 7 – Late submissions
+
+SELECT ?studentName ?assignmentTitle ?submissionDate ?dueDate WHERE {
+?sub a el:LateSubmission ;
+el:submittedBy ?student ;
+el:submissionFor ?assignment ;
+el:submissionDate ?submissionDate .
+?student el:hasName ?studentName .
+?assignment el:assignmentTitle ?assignmentTitle ;
+el:dueDate ?dueDate .
+}
+
+# Query 8 – Student count per course
+
+SELECT ?courseTitle (COUNT(?student) AS ?studentCount) WHERE {
+?student a el:Student ;
+el:enrolledIn ?course .
+?course el:courseTitle ?courseTitle .
+}
+GROUP BY ?courseTitle
+ORDER BY DESC(?studentCount)
+
+# Query 9 – Average grade per assignment
+
+SELECT ?assignmentTitle (AVG(?score) AS ?avgScore) WHERE {
+?assignment el:assignmentTitle ?assignmentTitle .
+?sub el:submissionFor ?assignment ;
+el:hasGrade ?grade .
+?grade el:score ?score .
+}
+GROUP BY ?assignmentTitle
