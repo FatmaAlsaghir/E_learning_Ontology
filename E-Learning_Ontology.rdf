@@ -1,0 +1,1039 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.org/elearning-ontology#"
+     xml:base="http://www.example.org/elearning-ontology"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.example.org/elearning-ontology">
+        <dc:creator>Fatma Alsaghir (220315105)</dc:creator>
+        <dc:date>2026-05-12</dc:date>
+        <rdfs:comment xml:lang="en">An OWL ontology modelling the core concepts of an e-learning system,
+including courses, modules, assignments, student submissions, grades,
+feedback, learning objectives, and instructor relationships. Developed
+as part of a Knowledge Engineering course project using Protégé and
+validated with the HermiT reasoner.</rdfs:comment>
+        <rdfs:label xml:lang="en">E-Learning Ontology</rdfs:label>
+        <owl:versionInfo>2.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#enrolledIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/elearning-ontology#enrolledIn">
+        <owl:inverseOf rdf:resource="http://www.example.org/elearning-ontology#hasStudent"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Student"/>
+        <rdfs:range rdf:resource="http://www.example.org/elearning-ontology#Course"/>
+        <rdfs:comment>Relates a Student to the Course they are enrolled in.</rdfs:comment>
+        <rdfs:label xml:lang="en">enrolled in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#hasAssignment -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/elearning-ontology#hasAssignment">
+        <owl:inverseOf rdf:resource="http://www.example.org/elearning-ontology#isAssignmentOf"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Course"/>
+        <rdfs:range rdf:resource="http://www.example.org/elearning-ontology#Assignment"/>
+        <rdfs:comment>Relates a Course to its Assignments.</rdfs:comment>
+        <rdfs:label xml:lang="en">has assignment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#hasFeedback -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/elearning-ontology#hasFeedback">
+        <owl:inverseOf rdf:resource="http://www.example.org/elearning-ontology#isFeedbackFor"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Submission"/>
+        <rdfs:range rdf:resource="http://www.example.org/elearning-ontology#Feedback"/>
+        <rdfs:comment>Relates a Submission to the qualitative Feedback provided by the instructor upon evaluation.</rdfs:comment>
+        <rdfs:label xml:lang="en">has feedback</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#hasGrade -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/elearning-ontology#hasGrade">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Submission"/>
+        <rdfs:range rdf:resource="http://www.example.org/elearning-ontology#Grade"/>
+        <rdfs:comment>Relates a Submission to its Grade. Functional: each Submission has at most one Grade.</rdfs:comment>
+        <rdfs:label xml:lang="en">has grade</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#hasLearningObjective -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/elearning-ontology#hasLearningObjective">
+        <owl:inverseOf rdf:resource="http://www.example.org/elearning-ontology#isLearningObjectiveOf"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Course"/>
+        <rdfs:range rdf:resource="http://www.example.org/elearning-ontology#LearningObjective"/>
+        <rdfs:comment>Relates a Course to its associated LearningObjective individuals, representing the intended learning goals of the course.</rdfs:comment>
+        <rdfs:label xml:lang="en">has learning objective</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#hasModule -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/elearning-ontology#hasModule">
+        <owl:inverseOf rdf:resource="http://www.example.org/elearning-ontology#isModuleOf"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Course"/>
+        <rdfs:range rdf:resource="http://www.example.org/elearning-ontology#Module"/>
+        <rdfs:comment>Relates a Course to its Modules.</rdfs:comment>
+        <rdfs:label xml:lang="en">has module</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#hasPrerequisite -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/elearning-ontology#hasPrerequisite">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Course"/>
+        <rdfs:range rdf:resource="http://www.example.org/elearning-ontology#Course"/>
+        <rdfs:comment>Relates a Course to its prerequisite Course(s). Transitive: if A requires B and B requires C, then A requires C.</rdfs:comment>
+        <rdfs:label xml:lang="en">has prerequisite</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#hasStudent -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/elearning-ontology#hasStudent">
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Course"/>
+        <rdfs:range rdf:resource="http://www.example.org/elearning-ontology#Student"/>
+        <rdfs:comment>Inverse of enrolledIn. Relates a Course to its enrolled Students.</rdfs:comment>
+        <rdfs:label xml:lang="en">has student</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#hasSubmission -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/elearning-ontology#hasSubmission">
+        <owl:inverseOf rdf:resource="http://www.example.org/elearning-ontology#submissionFor"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Assignment"/>
+        <rdfs:range rdf:resource="http://www.example.org/elearning-ontology#Submission"/>
+        <rdfs:comment>Inverse of submissionFor. Relates an Assignment to its Submissions.</rdfs:comment>
+        <rdfs:label xml:lang="en">has submission</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#isAssignmentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/elearning-ontology#isAssignmentOf">
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Assignment"/>
+        <rdfs:range rdf:resource="http://www.example.org/elearning-ontology#Course"/>
+        <rdfs:comment>Inverse of hasAssignment. Relates an Assignment back to the Course it belongs to.</rdfs:comment>
+        <rdfs:label xml:lang="en">is assignment of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#isFeedbackFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/elearning-ontology#isFeedbackFor">
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Feedback"/>
+        <rdfs:range rdf:resource="http://www.example.org/elearning-ontology#Submission"/>
+        <rdfs:comment>Inverse of hasFeedback. Relates a Feedback individual back to the Submission it was given for.</rdfs:comment>
+        <rdfs:label xml:lang="en">is feedback for</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#isLearningObjectiveOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/elearning-ontology#isLearningObjectiveOf">
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#LearningObjective"/>
+        <rdfs:range rdf:resource="http://www.example.org/elearning-ontology#Course"/>
+        <rdfs:comment>Inverse of hasLearningObjective. Relates a LearningObjective back to its Course.</rdfs:comment>
+        <rdfs:label xml:lang="en">is learning objective of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#isModuleOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/elearning-ontology#isModuleOf">
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Module"/>
+        <rdfs:range rdf:resource="http://www.example.org/elearning-ontology#Course"/>
+        <rdfs:comment>Inverse of hasModule. Relates a Module back to the Course it belongs to.</rdfs:comment>
+        <rdfs:label xml:lang="en">is module of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#isTaughtBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/elearning-ontology#isTaughtBy">
+        <owl:inverseOf rdf:resource="http://www.example.org/elearning-ontology#teaches"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Course"/>
+        <rdfs:range rdf:resource="http://www.example.org/elearning-ontology#Instructor"/>
+        <rdfs:comment>Inverse of teaches. Relates a Course to its Instructor. Functional: each Course has at most one Instructor.</rdfs:comment>
+        <rdfs:label xml:lang="en">is taught by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#submissionFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/elearning-ontology#submissionFor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Submission"/>
+        <rdfs:range rdf:resource="http://www.example.org/elearning-ontology#Assignment"/>
+        <rdfs:comment>Relates a Submission to the Assignment it was submitted for. Functional: each Submission targets exactly one Assignment.</rdfs:comment>
+        <rdfs:label xml:lang="en">submission for</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#submits -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/elearning-ontology#submits">
+        <owl:inverseOf rdf:resource="http://www.example.org/elearning-ontology#submittedBy"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Student"/>
+        <rdfs:range rdf:resource="http://www.example.org/elearning-ontology#Submission"/>
+        <rdfs:comment>Relates a Student to the Submission they submitted.</rdfs:comment>
+        <rdfs:label xml:lang="en">submits</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#submittedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/elearning-ontology#submittedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Submission"/>
+        <rdfs:range rdf:resource="http://www.example.org/elearning-ontology#Student"/>
+        <rdfs:comment>Inverse of submits. Relates a Submission to the Student who submitted it. Functional: each Submission belongs to exactly one Student.</rdfs:comment>
+        <rdfs:label xml:lang="en">submitted by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#teaches -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/elearning-ontology#teaches">
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Instructor"/>
+        <rdfs:range rdf:resource="http://www.example.org/elearning-ontology#Course"/>
+        <rdfs:comment>Relates an Instructor to the Course they teach.</rdfs:comment>
+        <rdfs:label xml:lang="en">teaches</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#assignmentTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/elearning-ontology#assignmentTitle">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The human-readable title of an Assignment, as it appears on the course syllabus.</rdfs:comment>
+        <rdfs:label xml:lang="en">assignment title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#courseCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/elearning-ontology#courseCode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The unique code identifying a Course (e.g. CS-550).</rdfs:comment>
+        <rdfs:label xml:lang="en">course code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#courseTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/elearning-ontology#courseTitle">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The full title of a Course.</rdfs:comment>
+        <rdfs:label xml:lang="en">course title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#dueDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/elearning-ontology#dueDate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The deadline date and time for an Assignment. A Submission whose submissionDate exceeds this value is classified as a LateSubmission.</rdfs:comment>
+        <rdfs:label xml:lang="en">due date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#employeeID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/elearning-ontology#employeeID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Instructor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The unique institutional employee identifier assigned to an Instructor.</rdfs:comment>
+        <rdfs:label xml:lang="en">employee ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#feedbackText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/elearning-ontology#feedbackText">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The written qualitative feedback text provided by an instructor on a Submission.</rdfs:comment>
+        <rdfs:label xml:lang="en">feedback text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#hasEmail -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/elearning-ontology#hasEmail">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The institutional email address of a Person (Student or Instructor).</rdfs:comment>
+        <rdfs:label xml:lang="en">has email</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/elearning-ontology#hasName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The full name of a Person (Student or Instructor).</rdfs:comment>
+        <rdfs:label xml:lang="en">has name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#maxScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/elearning-ontology#maxScore">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>The maximum achievable score for an Assignment, used to contextualise a student Grade.</rdfs:comment>
+        <rdfs:label xml:lang="en">max score</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#moduleDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/elearning-ontology#moduleDescription">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Module"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A brief human-readable description of the topics and learning content covered in a Module.</rdfs:comment>
+        <rdfs:label xml:lang="en">module description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#moduleOrder -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/elearning-ontology#moduleOrder">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Module"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The sequential position of a Module within its Course (1-based index).</rdfs:comment>
+        <rdfs:label xml:lang="en">module order</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#moduleTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/elearning-ontology#moduleTitle">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Module"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The title of a Module within a Course.</rdfs:comment>
+        <rdfs:label xml:lang="en">module title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#score -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/elearning-ontology#score">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Grade"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>The numerical score associated with a Grade.</rdfs:comment>
+        <rdfs:label xml:lang="en">score</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#studentID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/elearning-ontology#studentID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Student"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The unique institutional student identifier assigned to a Student.</rdfs:comment>
+        <rdfs:label xml:lang="en">student ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#submissionDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/elearning-ontology#submissionDate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.example.org/elearning-ontology#Submission"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>The date and time when a Submission was received by the system.</rdfs:comment>
+        <rdfs:label xml:lang="en">submission date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#AcademicContent -->
+
+    <owl:Class rdf:about="http://www.example.org/elearning-ontology#AcademicContent">
+        <rdfs:comment>Represents the organisational structure of educational content in the e-learning system, including courses and their associated modules.</rdfs:comment>
+        <rdfs:label xml:lang="en">Academic Content</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Assessment -->
+
+    <owl:Class rdf:about="http://www.example.org/elearning-ontology#Assessment">
+        <rdfs:comment>Represents evaluative activities used to assess student performance within a course, such as assignments or exams.</rdfs:comment>
+        <rdfs:label xml:lang="en">Assessment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Assignment -->
+
+    <owl:Class rdf:about="http://www.example.org/elearning-ontology#Assignment">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/elearning-ontology#Assessment"/>
+        <rdfs:comment>Represents an evaluative task assigned to students within a course for completion and assessment.</rdfs:comment>
+        <rdfs:label xml:lang="en">Assignment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Course -->
+
+    <owl:Class rdf:about="http://www.example.org/elearning-ontology#Course">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/elearning-ontology#AcademicContent"/>
+        <owl:disjointWith rdf:resource="http://www.example.org/elearning-ontology#LearningObjective"/>
+        <owl:disjointWith rdf:resource="http://www.example.org/elearning-ontology#Module"/>
+        <rdfs:comment>Represents a structured unit of study within the e-learning system, consisting of modules and assignments and delivered by an instructor.</rdfs:comment>
+        <rdfs:label xml:lang="en">Course</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Evaluation -->
+
+    <owl:Class rdf:about="http://www.example.org/elearning-ontology#Evaluation">
+        <rdfs:comment>Represents the outcome of assessment processes, including results such as grades and scores assigned to student submissions.</rdfs:comment>
+        <rdfs:label xml:lang="en">Evaluation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Feedback -->
+
+    <owl:Class rdf:about="http://www.example.org/elearning-ontology#Feedback">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/elearning-ontology#Evaluation"/>
+        <owl:disjointWith rdf:resource="http://www.example.org/elearning-ontology#Grade"/>
+        <rdfs:comment>Represents qualitative feedback provided by an instructor on a student&apos;s Submission, as distinct from the numerical score captured by Grade.</rdfs:comment>
+        <rdfs:label xml:lang="en">Feedback</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Grade -->
+
+    <owl:Class rdf:about="http://www.example.org/elearning-ontology#Grade">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/elearning-ontology#Evaluation"/>
+        <rdfs:comment>Represents the outcome of evaluating a student&apos;s submission, expressed as a numerical score or letter grade.</rdfs:comment>
+        <rdfs:label xml:lang="en">Grade</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Instructor -->
+
+    <owl:Class rdf:about="http://www.example.org/elearning-ontology#Instructor">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/elearning-ontology#Person"/>
+        <owl:disjointWith rdf:resource="http://www.example.org/elearning-ontology#Student"/>
+        <rdfs:comment>A person responsible for teaching one or more courses within the e-learning system.</rdfs:comment>
+        <rdfs:label xml:lang="en">Instructor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#LateSubmission -->
+
+    <owl:Class rdf:about="http://www.example.org/elearning-ontology#LateSubmission">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/elearning-ontology#Submission"/>
+        <rdfs:comment>A subclass of Submission representing any student submission whose submissionDate is later than the dueDate of the associated Assignment.</rdfs:comment>
+        <rdfs:label xml:lang="en">Late Submission</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#LearningObjective -->
+
+    <owl:Class rdf:about="http://www.example.org/elearning-ontology#LearningObjective">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/elearning-ontology#AcademicContent"/>
+        <owl:disjointWith rdf:resource="http://www.example.org/elearning-ontology#Module"/>
+        <rdfs:comment>Represents a specific intended learning goal associated with a Course or Module, typically expressed as a measurable outcome statement.</rdfs:comment>
+        <rdfs:label xml:lang="en">Learning Objective</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Module -->
+
+    <owl:Class rdf:about="http://www.example.org/elearning-ontology#Module">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/elearning-ontology#AcademicContent"/>
+        <rdfs:comment>Represents a structured component of a course, used to organise content into smaller units such as topics or lessons.</rdfs:comment>
+        <rdfs:label xml:lang="en">Module</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Person -->
+
+    <owl:Class rdf:about="http://www.example.org/elearning-ontology#Person">
+        <rdfs:comment>Represents individuals participating in the e-learning system, including students and instructors.</rdfs:comment>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Student -->
+
+    <owl:Class rdf:about="http://www.example.org/elearning-ontology#Student">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/elearning-ontology#Person"/>
+        <rdfs:comment>A person enrolled in one or more courses as a learner within the e-learning system.</rdfs:comment>
+        <rdfs:label xml:lang="en">Student</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Submission -->
+
+    <owl:Class rdf:about="http://www.example.org/elearning-ontology#Submission">
+        <rdfs:comment>Represents a student&apos;s completed work submitted in response to an assignment for evaluation and grading.</rdfs:comment>
+        <rdfs:label xml:lang="en">Submission</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Assignment_GitHubRepo -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Assignment_GitHubRepo">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Assignment"/>
+        <hasSubmission rdf:resource="http://www.example.org/elearning-ontology#Submission_Fatma_Repo"/>
+        <hasSubmission rdf:resource="http://www.example.org/elearning-ontology#Submission_Heydar_Repo"/>
+        <assignmentTitle>GitHub Repository Setup</assignmentTitle>
+        <dueDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-05-05T23:59:59</dueDate>
+        <maxScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</maxScore>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Assignment_InitialOntology -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Assignment_InitialOntology">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Assignment"/>
+        <hasSubmission rdf:resource="http://www.example.org/elearning-ontology#Submission_Emily_Assignment1"/>
+        <assignmentTitle>Initial Ontology Draft</assignmentTitle>
+        <dueDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-05-05T23:59:59</dueDate>
+        <maxScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</maxScore>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Assignment_OWLModelling -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Assignment_OWLModelling">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Assignment"/>
+        <assignmentTitle>OWL Modelling Exercise</assignmentTitle>
+        <dueDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-06-10T23:59:59</dueDate>
+        <maxScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</maxScore>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Assignment_SpecDoc -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Assignment_SpecDoc">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Assignment"/>
+        <hasSubmission rdf:resource="http://www.example.org/elearning-ontology#Submission_Jalil_SpecDoc"/>
+        <hasSubmission rdf:resource="http://www.example.org/elearning-ontology#Submission_James_SpecDoc"/>
+        <assignmentTitle>Project Specification Document</assignmentTitle>
+        <dueDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-05-05T23:59:59</dueDate>
+        <maxScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</maxScore>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Course_KnowledgeEng -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Course_KnowledgeEng">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Course"/>
+        <hasAssignment rdf:resource="http://www.example.org/elearning-ontology#Assignment_GitHubRepo"/>
+        <hasAssignment rdf:resource="http://www.example.org/elearning-ontology#Assignment_InitialOntology"/>
+        <hasAssignment rdf:resource="http://www.example.org/elearning-ontology#Assignment_SpecDoc"/>
+        <hasLearningObjective rdf:resource="http://www.example.org/elearning-ontology#LearningObjective_OntologyDesign"/>
+        <hasLearningObjective rdf:resource="http://www.example.org/elearning-ontology#LearningObjective_SemanticReasoning"/>
+        <hasModule rdf:resource="http://www.example.org/elearning-ontology#Module_Week1"/>
+        <hasStudent rdf:resource="http://www.example.org/elearning-ontology#Student_EmilyParker"/>
+        <hasStudent rdf:resource="http://www.example.org/elearning-ontology#Student_FatmaAlsaghir"/>
+        <hasStudent rdf:resource="http://www.example.org/elearning-ontology#Student_HeydarMehdizade"/>
+        <hasStudent rdf:resource="http://www.example.org/elearning-ontology#Student_JalilGuliyev"/>
+        <hasStudent rdf:resource="http://www.example.org/elearning-ontology#Student_JamesAnderson"/>
+        <hasStudent rdf:resource="http://www.example.org/elearning-ontology#Student_MahammadaliAliyev"/>
+        <hasStudent rdf:resource="http://www.example.org/elearning-ontology#Student_SarahWilliams"/>
+        <isTaughtBy rdf:resource="http://www.example.org/elearning-ontology#Instructor_ProfessorSmith"/>
+        <courseCode>CS-550</courseCode>
+        <courseTitle>Knowledge Engineering and Ontologies</courseTitle>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Course_SemanticWeb -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Course_SemanticWeb">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Course"/>
+        <hasAssignment rdf:resource="http://www.example.org/elearning-ontology#Assignment_OWLModelling"/>
+        <hasLearningObjective rdf:resource="http://www.example.org/elearning-ontology#LearningObjective_LinkedData"/>
+        <hasModule rdf:resource="http://www.example.org/elearning-ontology#Module_Week1_SemanticWeb"/>
+        <hasPrerequisite rdf:resource="http://www.example.org/elearning-ontology#Course_KnowledgeEng"/>
+        <hasStudent rdf:resource="http://www.example.org/elearning-ontology#Student_EmilyParker"/>
+        <hasStudent rdf:resource="http://www.example.org/elearning-ontology#Student_JamesAnderson"/>
+        <isTaughtBy rdf:resource="http://www.example.org/elearning-ontology#Instructor_ProfessorSmith"/>
+        <courseCode>CS-650</courseCode>
+        <courseTitle>Semantic Web Technologies</courseTitle>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Feedback_Emily_Assignment1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Feedback_Emily_Assignment1">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Feedback"/>
+        <feedbackText>Good ontology structure. Consider refining the class hierarchy and adding more restrictions.</feedbackText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Feedback_Heydar_Repo -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Feedback_Heydar_Repo">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Feedback"/>
+        <feedbackText>Excellent repository structure and commit history. Well-documented README and clean branch management.</feedbackText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Feedback_Jalil_SpecDoc -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Feedback_Jalil_SpecDoc">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Feedback"/>
+        <feedbackText>Submitted after the deadline. Content is acceptable but marks deducted for late submission. Please manage deadlines more carefully going forward.</feedbackText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Feedback_James_SpecDoc -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Feedback_James_SpecDoc">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Feedback"/>
+        <feedbackText>Specification document is clear but lacks detail in the requirements section. Please expand on the functional requirements.</feedbackText>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Grade_Emily_Assignment1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Grade_Emily_Assignment1">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Grade"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#float">88.5</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Grade_Fatma_Repo -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Grade_Fatma_Repo">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Grade"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Grade_Heydar_Repo -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Grade_Heydar_Repo">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Grade"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#float">92.0</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Grade_Jalil_SpecDoc -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Grade_Jalil_SpecDoc">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Grade"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#float">62.0</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Grade_James_SpecDoc -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Grade_James_SpecDoc">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Grade"/>
+        <score rdf:datatype="http://www.w3.org/2001/XMLSchema#float">75.0</score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Instructor_ProfessorSmith -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Instructor_ProfessorSmith">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Instructor"/>
+        <teaches rdf:resource="http://www.example.org/elearning-ontology#Course_KnowledgeEng"/>
+        <teaches rdf:resource="http://www.example.org/elearning-ontology#Course_SemanticWeb"/>
+        <employeeID>FAC-0042</employeeID>
+        <hasEmail>alan.smith@faculty.example.edu</hasEmail>
+        <hasName>Dr. Alan Smith</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#LearningObjective_LinkedData -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#LearningObjective_LinkedData">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#LearningObjective"/>
+        <isLearningObjectiveOf rdf:resource="http://www.example.org/elearning-ontology#Course_SemanticWeb"/>
+        <rdfs:comment>Students will be able to explain and apply Linked Data principles and publish RDF data according to Semantic Web best practices.</rdfs:comment>
+        <rdfs:label xml:lang="en">Linked Data Principles</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#LearningObjective_OntologyDesign -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#LearningObjective_OntologyDesign">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#LearningObjective"/>
+        <rdfs:comment>Students will be able to design and implement well-structured OWL ontologies using Protégé, applying appropriate class hierarchies, properties, and restrictions.</rdfs:comment>
+        <rdfs:label xml:lang="en">Ontology Design</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#LearningObjective_SemanticReasoning -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#LearningObjective_SemanticReasoning">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#LearningObjective"/>
+        <rdfs:comment>Students will be able to apply semantic reasoning using OWL reasoners such as HermiT to infer implicit knowledge from ontologies.</rdfs:comment>
+        <rdfs:label xml:lang="en">Semantic Reasoning</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Module_Week1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Module_Week1">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Module"/>
+        <moduleDescription>Covers the fundamental concepts of ontologies, knowledge representation, and the OWL language. Students are introduced to Protégé and basic class modelling.</moduleDescription>
+        <moduleOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</moduleOrder>
+        <moduleTitle>Introduction to Ontologies</moduleTitle>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Module_Week1_SemanticWeb -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Module_Week1_SemanticWeb">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Module"/>
+        <moduleDescription>Introduces the Semantic Web stack including RDF, RDFS, and OWL. Explores Linked Data principles and the role of ontologies in enabling machine-readable knowledge on the Web.</moduleDescription>
+        <moduleOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</moduleOrder>
+        <moduleTitle>Foundations of the Semantic Web</moduleTitle>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Student_EmilyParker -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Student_EmilyParker">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Student"/>
+        <enrolledIn rdf:resource="http://www.example.org/elearning-ontology#Course_KnowledgeEng"/>
+        <enrolledIn rdf:resource="http://www.example.org/elearning-ontology#Course_SemanticWeb"/>
+        <submits rdf:resource="http://www.example.org/elearning-ontology#Submission_Emily_Assignment1"/>
+        <hasEmail>emily.parker@student.example.edu</hasEmail>
+        <hasName>Emily Parker</hasName>
+        <studentID>STU-1001</studentID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Student_FatmaAlsaghir -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Student_FatmaAlsaghir">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Student"/>
+        <enrolledIn rdf:resource="http://www.example.org/elearning-ontology#Course_KnowledgeEng"/>
+        <submits rdf:resource="http://www.example.org/elearning-ontology#Submission_Fatma_Repo"/>
+        <hasEmail>fatma.alsaghir@student.example.edu</hasEmail>
+        <hasName>Fatma Alsaghir</hasName>
+        <studentID>STU-1002</studentID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Student_HeydarMehdizade -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Student_HeydarMehdizade">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Student"/>
+        <enrolledIn rdf:resource="http://www.example.org/elearning-ontology#Course_KnowledgeEng"/>
+        <submits rdf:resource="http://www.example.org/elearning-ontology#Submission_Heydar_Repo"/>
+        <hasEmail>heydar.mehdizade@student.example.edu</hasEmail>
+        <hasName>Heydar Mehdizade</hasName>
+        <studentID>STU-1003</studentID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Student_JalilGuliyev -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Student_JalilGuliyev">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Student"/>
+        <enrolledIn rdf:resource="http://www.example.org/elearning-ontology#Course_KnowledgeEng"/>
+        <submits rdf:resource="http://www.example.org/elearning-ontology#Submission_Jalil_SpecDoc"/>
+        <hasEmail>jalil.guliyev@student.example.edu</hasEmail>
+        <hasName>Jalil Guliyev</hasName>
+        <studentID>STU-1004</studentID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Student_JamesAnderson -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Student_JamesAnderson">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Student"/>
+        <enrolledIn rdf:resource="http://www.example.org/elearning-ontology#Course_KnowledgeEng"/>
+        <enrolledIn rdf:resource="http://www.example.org/elearning-ontology#Course_SemanticWeb"/>
+        <submits rdf:resource="http://www.example.org/elearning-ontology#Submission_James_SpecDoc"/>
+        <hasEmail>james.anderson@student.example.edu</hasEmail>
+        <hasName>James Anderson</hasName>
+        <studentID>STU-1005</studentID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Student_MahammadaliAliyev -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Student_MahammadaliAliyev">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Student"/>
+        <enrolledIn rdf:resource="http://www.example.org/elearning-ontology#Course_KnowledgeEng"/>
+        <hasEmail>mahammadali.aliyev@student.example.edu</hasEmail>
+        <hasName>Mahammadali Aliyev</hasName>
+        <studentID>STU-1006</studentID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Student_SarahWilliams -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Student_SarahWilliams">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Student"/>
+        <enrolledIn rdf:resource="http://www.example.org/elearning-ontology#Course_KnowledgeEng"/>
+        <hasEmail>sarah.williams@student.example.edu</hasEmail>
+        <hasName>Sarah Williams</hasName>
+        <studentID>STU-1007</studentID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Submission_Emily_Assignment1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Submission_Emily_Assignment1">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Submission"/>
+        <hasFeedback rdf:resource="http://www.example.org/elearning-ontology#Feedback_Emily_Assignment1"/>
+        <hasGrade rdf:resource="http://www.example.org/elearning-ontology#Grade_Emily_Assignment1"/>
+        <submissionFor rdf:resource="http://www.example.org/elearning-ontology#Assignment_InitialOntology"/>
+        <submittedBy rdf:resource="http://www.example.org/elearning-ontology#Student_EmilyParker"/>
+        <submissionDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-05-04T14:20:00</submissionDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Submission_Fatma_Repo -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Submission_Fatma_Repo">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Submission"/>
+        <hasGrade rdf:resource="http://www.example.org/elearning-ontology#Grade_Fatma_Repo"/>
+        <submissionFor rdf:resource="http://www.example.org/elearning-ontology#Assignment_GitHubRepo"/>
+        <submittedBy rdf:resource="http://www.example.org/elearning-ontology#Student_FatmaAlsaghir"/>
+        <submissionDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-04-28T10:30:00</submissionDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Submission_Heydar_Repo -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Submission_Heydar_Repo">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Submission"/>
+        <hasFeedback rdf:resource="http://www.example.org/elearning-ontology#Feedback_Heydar_Repo"/>
+        <hasGrade rdf:resource="http://www.example.org/elearning-ontology#Grade_Heydar_Repo"/>
+        <submissionFor rdf:resource="http://www.example.org/elearning-ontology#Assignment_GitHubRepo"/>
+        <submittedBy rdf:resource="http://www.example.org/elearning-ontology#Student_HeydarMehdizade"/>
+        <submissionDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-05-03T18:00:00</submissionDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Submission_Jalil_SpecDoc -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Submission_Jalil_SpecDoc">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#LateSubmission"/>
+        <hasFeedback rdf:resource="http://www.example.org/elearning-ontology#Feedback_Jalil_SpecDoc"/>
+        <hasGrade rdf:resource="http://www.example.org/elearning-ontology#Grade_Jalil_SpecDoc"/>
+        <submissionFor rdf:resource="http://www.example.org/elearning-ontology#Assignment_SpecDoc"/>
+        <submittedBy rdf:resource="http://www.example.org/elearning-ontology#Student_JalilGuliyev"/>
+        <submissionDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-05-07T08:15:00</submissionDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/elearning-ontology#Submission_James_SpecDoc -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/elearning-ontology#Submission_James_SpecDoc">
+        <rdf:type rdf:resource="http://www.example.org/elearning-ontology#Submission"/>
+        <hasFeedback rdf:resource="http://www.example.org/elearning-ontology#Feedback_James_SpecDoc"/>
+        <hasGrade rdf:resource="http://www.example.org/elearning-ontology#Grade_James_SpecDoc"/>
+        <submissionFor rdf:resource="http://www.example.org/elearning-ontology#Assignment_SpecDoc"/>
+        <submittedBy rdf:resource="http://www.example.org/elearning-ontology#Student_JamesAnderson"/>
+        <submissionDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-05-05T09:45:00</submissionDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.example.org/elearning-ontology#Student_EmilyParker"/>
+            <rdf:Description rdf:about="http://www.example.org/elearning-ontology#Student_FatmaAlsaghir"/>
+            <rdf:Description rdf:about="http://www.example.org/elearning-ontology#Student_HeydarMehdizade"/>
+            <rdf:Description rdf:about="http://www.example.org/elearning-ontology#Student_JalilGuliyev"/>
+            <rdf:Description rdf:about="http://www.example.org/elearning-ontology#Student_JamesAnderson"/>
+            <rdf:Description rdf:about="http://www.example.org/elearning-ontology#Student_MahammadaliAliyev"/>
+            <rdf:Description rdf:about="http://www.example.org/elearning-ontology#Student_SarahWilliams"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
