@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>E-Learning Ontology — Documentation</title>
+<style>
+  :root {
+    --navy: #16324f;
+    --blue: #2a6f97;
+    --blue-light: #eaf2f8;
+    --accent: #c4783a;
+    --text: #222b33;
+    --muted: #5a6b7a;
+    --border: #d7dee3;
+    --code-bg: #f5f7f9;
+    --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    --sans: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    color: var(--text);
+    background: #fff;
+    line-height: 1.65;
+    font-size: 15px;
+  }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code {
+    font-family: var(--mono);
+    font-size: 0.9em;
+    background: var(--code-bg);
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: #7a3e9d;
+  }
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--blue);
+    padding: 12px 14px;
+    overflow-x: auto;
+    font-family: var(--mono);
+    font-size: 0.9em;
+    color: #24292e;
+    border-radius: 0 4px 4px 0;
+    margin: 14px 0;
+  }
+  
+  header {
+    background: linear-gradient(135deg, var(--navy), #1d4268);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 4px solid var(--blue);
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.1em;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 30px 20px 60px 20px;
+  }
+  
+  section {
+    margin-bottom: 45px;
+  }
+  
+  h2 {
+    color: var(--navy);
+    font-size: 1.45em;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+  
+  h3 {
+    color: var(--navy);
+    font-size: 1.1em;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  
+  p {
+    margin: 0 0 14px 0;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px 0;
+  }
+  th, td {
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    text-align: left;
+    font-size: 0.92em;
+    vertical-align: top;
+  }
+  th {
+    background-color: var(--blue-light);
+    color: var(--navy);
+    font-weight: 600;
+  }
+  tr:nth-child(even) td {
+    background-color: #fafbfc;
+  }
+  
+  ul {
+    margin: 0 0 16px 0;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 6px;
+  }
+  
+  .class-box {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+  }
+  .class-box strong {
+    color: var(--blue);
+  }
+  
+  footer {
+    text-align: center;
+    padding: 24px 20px;
+    font-size: 0.85em;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    max-width: 960px;
+    margin: 40px auto 0 auto;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>E-Learning Ontology Documentation</h1>
+</header>
+
+<main>
+
+<section id="abstract">
+<h2>1. Abstract</h2>
+<p>The <strong>E-Learning Ontology</strong> is developed for a university-style online course portal. It models the core activities of an online learning environment, including system users (students and instructors), academic materials (courses, modules, and learning objectives), and the performance evaluation process (assignments, submissions, grades, and feedback text). Built using Protégé and checked for logical issues via the HermiT reasoner, the ontology serves as a structural blueprint to tie grades directly back to submitted coursework, assignments, and specific instructors.</p>
+</section>
+
+
+<section id="metadata">
+<h2>2. Ontology Metadata</h2>
+<p>The standard deployment details, version history, and identifiers for the ontology project are outlined in the table below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 25%;">Metadata Field</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Title</strong></td>
+      <td>E-Learning Ontology</td>
+    </tr>
+    <tr>
+      <td><strong>Ontology IRI</strong></td>
+      <td><code>http://www.example.org/elearning-ontology</code></td>
+    </tr>
+    <tr>
+      <td><strong>Namespace IRI</strong></td>
+      <td><code>http://www.example.org/elearning-ontology#</code></td>
+    </tr>
+    <tr>
+      <td><strong>Version</strong></td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td><strong>Author</strong></td>
+      <td>Fatma Alsaghir (220315105)</td>
+    </tr>
+    <tr>
+      <td><strong>Date</strong></td>
+      <td>2026-05-12</td>
+    </tr>
+    <tr>
+      <td><strong>Description</strong></td>
+      <td>An OWL schema used to model e-learning systems, connecting structural academic content like courses and learning blocks with student activities, grades, and faculty assignments.</td>
+    </tr>
+    <tr>
+      <td><strong>Tooling & Engines</strong></td>
+      <td>Protégé Desktop, HermiT 1.4.3.400 Reasoner, OWL API v4.5.29</td>
+    </tr>
+  </tbody>
+</table>
+</section>
+
+
+<section id="namespaces">
+<h2>3. Namespace Declarations</h2>
+<p>The prefixes used across the documentation and internal source rules to reference standard terminology namespaces are defined here:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 15%;">Prefix</th>
+      <th style="width: 55%;">Namespace IRI</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>(default)</code></td>
+      <td><code>http://www.example.org/elearning-ontology#</code></td>
+      <td>Base namespace for all custom classes, properties, and student/course individuals.</td>
+    </tr>
+    <tr>
+      <td><code>rdf</code></td>
+      <td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></td>
+      <td>Standard RDF primitives used to define basic instances and data types.</td>
+    </tr>
+    <tr>
+      <td><code>rdfs</code></td>
+      <td><code>http://www.w3.org/2000/01/rdf-schema#</code></td>
+      <td>Basic schema building blocks used for human-readable labels, comments, and sub-class structures.</td>
+    </tr>
+    <tr>
+      <td><code>owl</code></td>
+      <td><code>http://www.w3.org/2002/07/owl#</code></td>
+      <td>Web Ontology Language terms used to configure property characteristics and constraints.</td>
+    </tr>
+    <tr>
+      <td><code>xsd</code></td>
+      <td><code>http://www.w3.org/2001/XMLSchema#</code></td>
+      <td>Data types used to handle primitive properties like alphanumeric strings, floats, and dates.</td>
+    </tr>
+    <tr>
+      <td><code>dc</code></td>
+      <td><code>http://purl.org/dc/elements/1.1/</code></td>
+      <td>Dublin Core vocabulary elements used to tag basic ownership properties like authors and creation dates.</td>
+    </tr>
+  </tbody>
+</table>
+</section>
+
+
+<section id="hierarchy">
+<h2>4. Class Hierarchy</h2>
+<p>The structural layout below outlines how the customized classes are grouped and arranged under the root <code>owl:Thing</code> object:</p>
+
+<pre>
+owl:Thing
+├── AcademicContent
+│   ├── Course
+│   ├── LearningObjective
+│   └── Module
+├── Assessment
+│   └── Assignment
+├── Evaluation
+│   ├── Feedback
+│   └── Grade
+├── Person
+│   ├── Instructor
+│   └── Student
+└── Submission
+    └── LateSubmission
+</pre>
+</section>
+
+
+<section id="classes">
+<h2>5. Classes</h2>
+<p>This section lists each class from the hierarchy along with its parent class and a short description of its exact role in our project:</p>
+
+<div class="class-box">
+  <h3>AcademicContent</h3>
+  <p><strong>Parent Class:</strong> <code>owl:Thing</code><br />
+  <strong>Short Description:</strong> A general container used to group all structured course materials, including separate study blocks and specific learning goals.</p>
+</div>
+
+<div class="class-box">
+  <h3>Assessment</h3>
+  <p><strong>Parent Class:</strong> <code>owl:Thing</code><br />
+  <strong>Short Description:</strong> A general category representing any method or academic task used to check a student's knowledge level.</p>
+</div>
+
+<div class="class-box">
+  <h3>Assignment</h3>
+  <p><strong>Parent Class:</strong> <code>Assessment</code><br />
+  <strong>Short Description:</strong> A specific graded homework task or project configured inside a course module that must be completed by students.</p>
+</div>
+
+<div class="class-box">
+  <h3>Course</h3>
+  <p><strong>Parent Class:</strong> <code>AcademicContent</code><br />
+  <strong>Short Description:</strong> A full university course containing sequential modules, learning goals, assigned tasks, and managed by a single main instructor.</p>
+</div>
+
+<div class="class-box">
+  <h3>Evaluation</h3>
+  <p><strong>Parent Class:</strong> <code>owl:Thing</code><br />
+  <strong>Short Description:</strong> A generalized class tracking the performance assessment of student work, splitting into numeric scores and written reviews.</p>
+</div>
+
+<div class="class-box">
+  <h3>Feedback</h3>
+  <p><strong>Parent Class:</strong> <code>Evaluation</code><br />
+  <strong>Short Description:</strong> Alphanumeric critique and commentary written by an instructor to review a student's file upload.</p>
+</div>
+
+<div class="class-box">
+  <h3>Grade</h3>
+  <p><strong>Parent Class:</strong> <code>Evaluation</code><br />
+  <strong>Short Description:</strong> The exact numerical points awarded to a student for their coursework submission.</p>
+</div>
+
+<div class="class-box">
+  <h3>Instructor</h3>
+  <p><strong>Parent Class:</strong> <code>Person</code><br />
+  <strong>Short Description:</strong> A university faculty member responsible for creating course material, guiding modules, and scoring student work.</p>
+</div>
+
+<div class="class-box">
+  <h3>LateSubmission</h3>
+  <p><strong>Parent Class:</strong> <code>Submission</code><br />
+  <strong>Short Description:</strong> A coursework file uploaded by a student that has an internal date value occurring after the set assignment deadline.</p>
+</div>
+
+<div class="class-box">
+  <h3>LearningObjective</h3>
+  <p><strong>Parent Class:</strong> <code>AcademicContent</code><br />
+  <strong>Short Description:</strong> A specific milestone or core skill that a student is expected to master after finishing a module or full course.</p>
+</div>
+
+<div class="class-box">
+  <h3>Module</h3>
+  <p><strong>Parent Class:</strong> <code>AcademicContent</code><br />
+  <strong>Short Description:</strong> A single structural chapter or weekly topic block used to group learning materials inside a course.</p>
+</div>
+
+<div class="class-box">
+  <h3>Person</h3>
+  <p><strong>Parent Class:</strong> <code>owl:Thing</code><br />
+  <strong>Short Description:</strong> A top-level category used to hold personal details for any user interacting with the educational portal.</p>
+</div>
+
+<div class="class-box">
+  <h3>Student</h3>
+  <p><strong>Parent Class:</strong> <code>Person</code><br />
+  <strong>Short Description:</strong> A university user enrolled in specific courses who uploads project files to satisfy task deadlines.</p>
+</div>
+
+<div class="class-box">
+  <h3>Submission</h3>
+  <p><strong>Parent Class:</strong> <code>owl:Thing</code><br />
+  <strong>Short Description:</strong> An archive file or document turned in by a student to fulfill an assigned coursework task.</p>
+</div>
+</section>
+
+
+<section id="objectproperties">
+<h2>6. Object Properties</h2>
+<p>The relationships linking individuals of different classes together are outlined in the structural table below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 20%;">Property</th>
+      <th style="width: 20%;">Domain</th>
+      <th style="width: 20%;">Range</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>enrolledIn</code></td>
+      <td>Student</td>
+      <td>Course</td>
+      <td>Connects a student user to the active courses they are taking.</td>
+    </tr>
+    <tr>
+      <td><code>hasAssignment</code></td>
+      <td>Course</td>
+      <td>Assignment</td>
+      <td>Links a full course to the specific assignments that need to be completed.</td>
+    </tr>
+    <tr>
+      <td><code>hasFeedback</code></td>
+      <td>Submission</td>
+      <td>Feedback</td>
+      <td>Connects an uploaded coursework file to the evaluation notes left by a teacher.</td>
+    </tr>
+    <tr>
+      <td><code>hasGrade</code></td>
+      <td>Submission</td>
+      <td>Grade</td>
+      <td>Links a student's submission to its final numeric score instance. Functional property type (maximum of 1 grade per submission).</td>
+    </tr>
+    <tr>
+      <td><code>hasLearningObjective</code></td>
+      <td>Course</td>
+      <td>LearningObjective</td>
+      <td>Maps a course to the explicit concepts or skill milestones students should acquire.</td>
+    </tr>
+    <tr>
+      <td><code>hasModule</code></td>
+      <td>Course</td>
+      <td>Module</td>
+      <td>Links a full course to its chronological learning units or weekly modules.</td>
+    </tr>
+    <tr>
+      <td><code>hasPrerequisite</code></td>
+      <td>Course</td>
+      <td>Course</td>
+      <td>Defines dependencies between classes by showing if a course requires completing a prior course. This property is transitive.</td>
+    </tr>
+    <tr>
+      <td><code>hasStudent</code></td>
+      <td>Course</td>
+      <td>Student</td>
+      <td>Maps an active course back to its registered students. Configured as the direct inverse of <code>enrolledIn</code>.</td>
+    </tr>
+    <tr>
+      <td><code>hasSubmission</code></td>
+      <td>Assignment</td>
+      <td>Submission</td>
+      <td>Connects a graded task to all the individual student files turned in for it.</td>
+    </tr>
+    <tr>
+      <td><code>isAssignmentOf</code></td>
+      <td>Assignment</td>
+      <td>Course</td>
+      <td>Identifies which parent course an assignment individual belongs to. Inverse of <code>hasAssignment</code>.</td>
+    </tr>
+    <tr>
+      <td><code>isFeedbackFor</code></td>
+      <td>Feedback</td>
+      <td>Submission</td>
+      <td>Points a written feedback review back to the exact submission it evaluates. Inverse of <code>hasFeedback</code>.</td>
+    </tr>
+    <tr>
+      <td><code>isLearningObjectiveOf</code></td>
+      <td>LearningObjective</td>
+      <td>Course</td>
+      <td>Links a specific skill objective back to its source course. Inverse of <code>hasLearningObjective</code>.</td>
+    </tr>
+    <tr>
+      <td><code>isModuleOf</code></td>
+      <td>Module</td>
+      <td>Course</td>
+      <td>Links a weekly chapter instance back to its parent course. Inverse of <code>hasModule</code>.</td>
+    </tr>
+    <tr>
+      <td><code>isTaughtBy</code></td>
+      <td>Course</td>
+      <td>Instructor</td>
+      <td>Links a course to its main teacher. Functional property type (each course has exactly 1 primary instructor).</td>
+    </tr>
+    <tr>
+      <td><code>submissionFor</code></td>
+      <td>Submission</td>
+      <td>Assignment</td>
+      <td>Connects a student's uploaded solution back to the original assignment prompt. Inverse of <code>hasSubmission</code>.</td>
+    </tr>
+    <tr>
+      <td><code>submits</code></td>
+      <td>Student</td>
+      <td>Submission</td>
+      <td>Links a student to the file individuals they have uploaded to the platform.</td>
+    </tr>
+    <tr>
+      <td><code>submittedBy</code></td>
+      <td>Submission</td>
+      <td>Student</td>
+      <td>Traces a turned-in file back to the student individual who uploaded it. Inverse of <code>submits</code>.</td>
+    </tr>
+    <tr>
+      <td><code>teaches</code></td>
+      <td>Instructor</td>
+      <td>Course</td>
+      <td>Connects a faculty member to the courses they manage. Inverse of <code>isTaughtBy</code>.</td>
+    </tr>
+  </tbody>
+</table>
+</section>
+
+
+<section id="dataproperties">
+<h2>7. Data Properties</h2>
+<p>The data properties used to add text descriptions, dates, and numbers directly to class instances are detailed below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 22%;">Property</th>
+      <th style="width: 18%;">Domain</th>
+      <th style="width: 18%;">Datatype</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>assignmentTitle</code></td>
+      <td>Assignment</td>
+      <td><code>xsd:string</code></td>
+      <td>The official descriptive name given to an assignment.</td>
+    </tr>
+    <tr>
+      <td><code>courseCode</code></td>
+      <td>Course</td>
+      <td><code>xsd:string</code></td>
+      <td>The university code tag used to identify a class (e.g., "CS-550"). Functional type.</td>
+    </tr>
+    <tr>
+      <td><code>courseTitle</code></td>
+      <td>Course</td>
+      <td><code>xsd:string</code></td>
+      <td>The complete structural name of a course (e.g., "Knowledge Engineering").</td>
+    </tr>
+    <tr>
+      <td><code>dueDate</code></td>
+      <td>Assignment</td>
+      <td><code>xsd:dateTime</code></td>
+      <td>The exact calendar date and hour cut-off time for an assignment submission.</td>
+    </tr>
+    <tr>
+      <td><code>employeeID</code></td>
+      <td>Instructor</td>
+      <td><code>xsd:string</code></td>
+      <td>The unique staff identification number assigned to an instructor. Functional type.</td>
+    </tr>
+    <tr>
+      <td><code>feedbackText</code></td>
+      <td>Feedback</td>
+      <td><code>xsd:string</code></td>
+      <td>The actual written comments left by an instructor reviewing turned-in work.</td>
+    </tr>
+    <tr>
+      <td><code>hasEmail</code></td>
+      <td>Person</td>
+      <td><code>xsd:string</code></td>
+      <td>The official university email address connected to a specific system user.</td>
+    </tr>
+    <tr>
+      <td><code>hasName</code></td>
+      <td>Person</td>
+      <td><code>xsd:string</code></td>
+      <td>The standard first and last name string identifying a student or instructor.</td>
+    </tr>
+    <tr>
+      <td><code>maxScore</code></td>
+      <td>Assignment</td>
+      <td><code>xsd:float</code></td>
+      <td>The maximum points possible for a task (e.g., 100.0). Functional type.</td>
+    </tr>
+    <tr>
+      <td><code>moduleDescription</code></td>
+      <td>Module</td>
+      <td><code>xsd:string</code></td>
+      <td>A short paragraph summarizing what subject matter is covered inside a module.</td>
+    </tr>
+    <tr>
+      <td><code>moduleOrder</code></td>
+      <td>Module</td>
+      <td><code>xsd:integer</code></td>
+      <td>The specific sequence number for a module (e.g., 1, 2, 3 to represent week ordering). Functional type.</td>
+    </tr>
+    <tr>
+      <td><code>moduleTitle</code></td>
+      <td>Module</td>
+      <td><code>xsd:string</code></td>
+      <td>The specific topic header given to a single course module.</td>
+    </tr>
+    <tr>
+      <td><code>score</code></td>
+      <td>Grade</td>
+      <td><code>xsd:float</code></td>
+      <td>The exact numerical grade score earned by a student on a submission. Functional type.</td>
+    </tr>
+    <tr>
+      <td><code>studentID</code></td>
+      <td>Student</td>
+      <td><code>xsd:string</code></td>
+      <td>The official university registration card number for a student. Functional type.</td>
+    </tr>
+    <tr>
+      <td><code>submissionDate</code></td>
+      <td>Submission</td>
+      <td><code>xsd:dateTime</code></td>
+      <td>The exact log timestamp recorded when a student uploads their solution file. Functional type.</td>
+    </tr>
+  </tbody>
+</table>
+</section>
+
+
+<section id="individuals">
+<h2>8. Individuals Summary</h2>
+<p>The sample dataset contains **33 distinct individuals** modeling two full academic courses with real-world scenarios. The table below summarizes these individuals by class:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 25%;">Class</th>
+      <th style="width: 25%;">Number of Individuals</th>
+      <th>Example Individuals from the Project</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Course</strong></td>
+      <td>2</td>
+      <td><code>Course_KnowledgeEng</code>, <code>Course_SemanticWeb</code></td>
+    </tr>
+    <tr>
+      <td><strong>Instructor</strong></td>
+      <td>1</td>
+      <td><code>Instructor_ProfessorSmith</code></td>
+    </tr>
+    <tr>
+      <td><strong>Student</strong></td>
+      <td>7</td>
+      <td><code>Student_FatmaAlsaghir</code>, <code>Student_EmilyParker</code>, <code>Student_JalilGuliyev</code></td>
+    </tr>
+    <tr>
+      <td><strong>Assignment</strong></td>
+      <td>4</td>
+      <td><code>Assignment_GitHubRepo</code>, <code>Assignment_SpecDoc</code></td>
+    </tr>
+    <tr>
+      <td><strong>Module</strong></td>
+      <td>2</td>
+      <td><code>Module_Week1_KE</code>, <code>Module_Week1_SW</code></td>
+    </tr>
+    <tr>
+      <td><strong>LearningObjective</strong></td>
+      <td>3</td>
+      <td><code>LearningObjective_OntologyDesign</code>, <code>LearningObjective_SemanticWebCore</code></td>
+    </tr>
+    <tr>
+      <td><strong>Submission</strong></td>
+      <td>4</td>
+      <td><code>Submission_Fatma_Repo</code>, <code>Submission_James_SpecDoc</code></td>
+    </tr>
+    <tr>
+      <td><strong>LateSubmission</strong></td>
+      <td>1</td>
+      <td><code>Submission_Jalil_SpecDoc</code></td>
+    </tr>
+    <tr>
+      <td><strong>Grade</strong></td>
+      <td>5</td>
+      <td><code>Grade_Fatma_Repo</code>, <code>Grade_Jalil_SpecDoc</code></td>
+    </tr>
+    <tr>
+      <td><strong>Feedback</strong></td>
+      <td>4</td>
+      <td><code>Feedback_Fatma_Repo</code>, <code>Feedback_James_SpecDoc</code></td>
+    </tr>
+  </tbody>
+</table>
+</section>
+
+<footer>
+  E-Learning Ontology — Version 2.0 — Fatma Alsaghir (220315105) — 2026.
+</footer>
+
+</main>
+</body>
+</html>
