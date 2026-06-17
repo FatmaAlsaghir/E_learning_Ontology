@@ -1,0 +1,1370 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
+  "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
+    "@list" : [ {
+      "@id" : "http://www.example.org/elearning-ontology#Student_EmilyParker"
+    }, {
+      "@id" : "http://www.example.org/elearning-ontology#Student_FatmaAlsaghir"
+    }, {
+      "@id" : "http://www.example.org/elearning-ontology#Student_HeydarMehdizade"
+    }, {
+      "@id" : "http://www.example.org/elearning-ontology#Student_JalilGuliyev"
+    }, {
+      "@id" : "http://www.example.org/elearning-ontology#Student_JamesAnderson"
+    }, {
+      "@id" : "http://www.example.org/elearning-ontology#Student_MahammadaliAliyev"
+    }, {
+      "@id" : "http://www.example.org/elearning-ontology#Student_SarahWilliams"
+    } ]
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/date",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Fatma Alsaghir (220315105)"
+  } ],
+  "http://purl.org/dc/elements/1.1/date" : [ {
+    "@value" : "2026-05-12"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "An OWL ontology modelling the core concepts of an e-learning system,\nincluding courses, modules, assignments, student submissions, grades,\nfeedback, learning objectives, and instructor relationships. Developed\nas part of a Knowledge Engineering course project using Protégé and\nvalidated with the HermiT reasoner."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "E-Learning Ontology"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "2.0"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#AcademicContent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Represents the organisational structure of educational content in the e-learning system, including courses and their associated modules."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Academic Content"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Assessment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Represents evaluative activities used to assess student performance within a course, such as assignments or exams."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Assessment"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Assignment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Represents an evaluative task assigned to students within a course for completion and assessment."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Assignment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Assessment"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Assignment_GitHubRepo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#assignmentTitle" : [ {
+    "@value" : "GitHub Repository Setup"
+  } ],
+  "http://www.example.org/elearning-ontology#dueDate" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2026-05-05T23:59:59"
+  } ],
+  "http://www.example.org/elearning-ontology#hasSubmission" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission_Fatma_Repo"
+  }, {
+    "@id" : "http://www.example.org/elearning-ontology#Submission_Heydar_Repo"
+  } ],
+  "http://www.example.org/elearning-ontology#maxScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "100.0"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Assignment_InitialOntology",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#assignmentTitle" : [ {
+    "@value" : "Initial Ontology Draft"
+  } ],
+  "http://www.example.org/elearning-ontology#dueDate" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2026-05-05T23:59:59"
+  } ],
+  "http://www.example.org/elearning-ontology#hasSubmission" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission_Emily_Assignment1"
+  } ],
+  "http://www.example.org/elearning-ontology#maxScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "100.0"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Assignment_OWLModelling",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#assignmentTitle" : [ {
+    "@value" : "OWL Modelling Exercise"
+  } ],
+  "http://www.example.org/elearning-ontology#dueDate" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2026-06-10T23:59:59"
+  } ],
+  "http://www.example.org/elearning-ontology#maxScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "100.0"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Assignment_SpecDoc",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#assignmentTitle" : [ {
+    "@value" : "Project Specification Document"
+  } ],
+  "http://www.example.org/elearning-ontology#dueDate" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2026-05-05T23:59:59"
+  } ],
+  "http://www.example.org/elearning-ontology#hasSubmission" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission_Jalil_SpecDoc"
+  }, {
+    "@id" : "http://www.example.org/elearning-ontology#Submission_James_SpecDoc"
+  } ],
+  "http://www.example.org/elearning-ontology#maxScore" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "100.0"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Course",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Represents a structured unit of study within the e-learning system, consisting of modules and assignments and delivered by an instructor."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Course"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#AcademicContent"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#LearningObjective"
+  }, {
+    "@id" : "http://www.example.org/elearning-ontology#Module"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Course_KnowledgeEng",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#courseCode" : [ {
+    "@value" : "CS-550"
+  } ],
+  "http://www.example.org/elearning-ontology#courseTitle" : [ {
+    "@value" : "Knowledge Engineering and Ontologies"
+  } ],
+  "http://www.example.org/elearning-ontology#hasAssignment" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment_GitHubRepo"
+  }, {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment_InitialOntology"
+  }, {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment_SpecDoc"
+  } ],
+  "http://www.example.org/elearning-ontology#hasLearningObjective" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#LearningObjective_OntologyDesign"
+  }, {
+    "@id" : "http://www.example.org/elearning-ontology#LearningObjective_SemanticReasoning"
+  } ],
+  "http://www.example.org/elearning-ontology#hasModule" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Module_Week1"
+  } ],
+  "http://www.example.org/elearning-ontology#hasStudent" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student_EmilyParker"
+  }, {
+    "@id" : "http://www.example.org/elearning-ontology#Student_FatmaAlsaghir"
+  }, {
+    "@id" : "http://www.example.org/elearning-ontology#Student_HeydarMehdizade"
+  }, {
+    "@id" : "http://www.example.org/elearning-ontology#Student_JalilGuliyev"
+  }, {
+    "@id" : "http://www.example.org/elearning-ontology#Student_JamesAnderson"
+  }, {
+    "@id" : "http://www.example.org/elearning-ontology#Student_MahammadaliAliyev"
+  }, {
+    "@id" : "http://www.example.org/elearning-ontology#Student_SarahWilliams"
+  } ],
+  "http://www.example.org/elearning-ontology#isTaughtBy" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Instructor_ProfessorSmith"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Course_SemanticWeb",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#courseCode" : [ {
+    "@value" : "CS-650"
+  } ],
+  "http://www.example.org/elearning-ontology#courseTitle" : [ {
+    "@value" : "Semantic Web Technologies"
+  } ],
+  "http://www.example.org/elearning-ontology#hasAssignment" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment_OWLModelling"
+  } ],
+  "http://www.example.org/elearning-ontology#hasLearningObjective" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#LearningObjective_LinkedData"
+  } ],
+  "http://www.example.org/elearning-ontology#hasModule" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Module_Week1_SemanticWeb"
+  } ],
+  "http://www.example.org/elearning-ontology#hasPrerequisite" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course_KnowledgeEng"
+  } ],
+  "http://www.example.org/elearning-ontology#hasStudent" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student_EmilyParker"
+  }, {
+    "@id" : "http://www.example.org/elearning-ontology#Student_JamesAnderson"
+  } ],
+  "http://www.example.org/elearning-ontology#isTaughtBy" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Instructor_ProfessorSmith"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Evaluation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Represents the outcome of assessment processes, including results such as grades and scores assigned to student submissions."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Evaluation"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Feedback",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Represents qualitative feedback provided by an instructor on a student's Submission, as distinct from the numerical score captured by Grade."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Feedback"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Evaluation"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Grade"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Feedback_Emily_Assignment1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#feedbackText" : [ {
+    "@value" : "Good ontology structure. Consider refining the class hierarchy and adding more restrictions."
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Feedback"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Feedback_Heydar_Repo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#feedbackText" : [ {
+    "@value" : "Excellent repository structure and commit history. Well-documented README and clean branch management."
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Feedback"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Feedback_Jalil_SpecDoc",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#feedbackText" : [ {
+    "@value" : "Submitted after the deadline. Content is acceptable but marks deducted for late submission. Please manage deadlines more carefully going forward."
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Feedback"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Feedback_James_SpecDoc",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#feedbackText" : [ {
+    "@value" : "Specification document is clear but lacks detail in the requirements section. Please expand on the functional requirements."
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Feedback"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Grade",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Represents the outcome of evaluating a student's submission, expressed as a numerical score or letter grade."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Grade"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Evaluation"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Grade_Emily_Assignment1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#score" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "88.5"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Grade"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Grade_Fatma_Repo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#score" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "100.0"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Grade"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Grade_Heydar_Repo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#score" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "92.0"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Grade"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Grade_Jalil_SpecDoc",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#score" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "62.0"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Grade"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Grade_James_SpecDoc",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#score" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#float",
+    "@value" : "75.0"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Grade"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Instructor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A person responsible for teaching one or more courses within the e-learning system."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Instructor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Person"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Instructor_ProfessorSmith",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#employeeID" : [ {
+    "@value" : "FAC-0042"
+  } ],
+  "http://www.example.org/elearning-ontology#hasEmail" : [ {
+    "@value" : "alan.smith@faculty.example.edu"
+  } ],
+  "http://www.example.org/elearning-ontology#hasName" : [ {
+    "@value" : "Dr. Alan Smith"
+  } ],
+  "http://www.example.org/elearning-ontology#teaches" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course_KnowledgeEng"
+  }, {
+    "@id" : "http://www.example.org/elearning-ontology#Course_SemanticWeb"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Instructor"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#LateSubmission",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A subclass of Submission representing any student submission whose submissionDate is later than the dueDate of the associated Assignment."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Late Submission"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#LearningObjective",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Represents a specific intended learning goal associated with a Course or Module, typically expressed as a measurable outcome statement."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Learning Objective"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#AcademicContent"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Module"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#LearningObjective_LinkedData",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#isLearningObjectiveOf" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course_SemanticWeb"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#LearningObjective"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Students will be able to explain and apply Linked Data principles and publish RDF data according to Semantic Web best practices."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Linked Data Principles"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#LearningObjective_OntologyDesign",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#LearningObjective"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Students will be able to design and implement well-structured OWL ontologies using Protégé, applying appropriate class hierarchies, properties, and restrictions."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Ontology Design"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#LearningObjective_SemanticReasoning",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#LearningObjective"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Students will be able to apply semantic reasoning using OWL reasoners such as HermiT to infer implicit knowledge from ontologies."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Semantic Reasoning"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Module",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Represents a structured component of a course, used to organise content into smaller units such as topics or lessons."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Module"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#AcademicContent"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Module_Week1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#moduleDescription" : [ {
+    "@value" : "Covers the fundamental concepts of ontologies, knowledge representation, and the OWL language. Students are introduced to Protégé and basic class modelling."
+  } ],
+  "http://www.example.org/elearning-ontology#moduleOrder" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.example.org/elearning-ontology#moduleTitle" : [ {
+    "@value" : "Introduction to Ontologies"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Module"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Module_Week1_SemanticWeb",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#moduleDescription" : [ {
+    "@value" : "Introduces the Semantic Web stack including RDF, RDFS, and OWL. Explores Linked Data principles and the role of ontologies in enabling machine-readable knowledge on the Web."
+  } ],
+  "http://www.example.org/elearning-ontology#moduleOrder" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ],
+  "http://www.example.org/elearning-ontology#moduleTitle" : [ {
+    "@value" : "Foundations of the Semantic Web"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Module"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Represents individuals participating in the e-learning system, including students and instructors."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Person"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Student",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A person enrolled in one or more courses as a learner within the e-learning system."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Student"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Person"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Student_EmilyParker",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#enrolledIn" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course_KnowledgeEng"
+  }, {
+    "@id" : "http://www.example.org/elearning-ontology#Course_SemanticWeb"
+  } ],
+  "http://www.example.org/elearning-ontology#hasEmail" : [ {
+    "@value" : "emily.parker@student.example.edu"
+  } ],
+  "http://www.example.org/elearning-ontology#hasName" : [ {
+    "@value" : "Emily Parker"
+  } ],
+  "http://www.example.org/elearning-ontology#studentID" : [ {
+    "@value" : "STU-1001"
+  } ],
+  "http://www.example.org/elearning-ontology#submits" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission_Emily_Assignment1"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Student_FatmaAlsaghir",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#enrolledIn" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course_KnowledgeEng"
+  } ],
+  "http://www.example.org/elearning-ontology#hasEmail" : [ {
+    "@value" : "fatma.alsaghir@student.example.edu"
+  } ],
+  "http://www.example.org/elearning-ontology#hasName" : [ {
+    "@value" : "Fatma Alsaghir"
+  } ],
+  "http://www.example.org/elearning-ontology#studentID" : [ {
+    "@value" : "STU-1002"
+  } ],
+  "http://www.example.org/elearning-ontology#submits" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission_Fatma_Repo"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Student_HeydarMehdizade",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#enrolledIn" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course_KnowledgeEng"
+  } ],
+  "http://www.example.org/elearning-ontology#hasEmail" : [ {
+    "@value" : "heydar.mehdizade@student.example.edu"
+  } ],
+  "http://www.example.org/elearning-ontology#hasName" : [ {
+    "@value" : "Heydar Mehdizade"
+  } ],
+  "http://www.example.org/elearning-ontology#studentID" : [ {
+    "@value" : "STU-1003"
+  } ],
+  "http://www.example.org/elearning-ontology#submits" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission_Heydar_Repo"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Student_JalilGuliyev",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#enrolledIn" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course_KnowledgeEng"
+  } ],
+  "http://www.example.org/elearning-ontology#hasEmail" : [ {
+    "@value" : "jalil.guliyev@student.example.edu"
+  } ],
+  "http://www.example.org/elearning-ontology#hasName" : [ {
+    "@value" : "Jalil Guliyev"
+  } ],
+  "http://www.example.org/elearning-ontology#studentID" : [ {
+    "@value" : "STU-1004"
+  } ],
+  "http://www.example.org/elearning-ontology#submits" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission_Jalil_SpecDoc"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Student_JamesAnderson",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#enrolledIn" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course_KnowledgeEng"
+  }, {
+    "@id" : "http://www.example.org/elearning-ontology#Course_SemanticWeb"
+  } ],
+  "http://www.example.org/elearning-ontology#hasEmail" : [ {
+    "@value" : "james.anderson@student.example.edu"
+  } ],
+  "http://www.example.org/elearning-ontology#hasName" : [ {
+    "@value" : "James Anderson"
+  } ],
+  "http://www.example.org/elearning-ontology#studentID" : [ {
+    "@value" : "STU-1005"
+  } ],
+  "http://www.example.org/elearning-ontology#submits" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission_James_SpecDoc"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Student_MahammadaliAliyev",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#enrolledIn" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course_KnowledgeEng"
+  } ],
+  "http://www.example.org/elearning-ontology#hasEmail" : [ {
+    "@value" : "mahammadali.aliyev@student.example.edu"
+  } ],
+  "http://www.example.org/elearning-ontology#hasName" : [ {
+    "@value" : "Mahammadali Aliyev"
+  } ],
+  "http://www.example.org/elearning-ontology#studentID" : [ {
+    "@value" : "STU-1006"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Student_SarahWilliams",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#enrolledIn" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course_KnowledgeEng"
+  } ],
+  "http://www.example.org/elearning-ontology#hasEmail" : [ {
+    "@value" : "sarah.williams@student.example.edu"
+  } ],
+  "http://www.example.org/elearning-ontology#hasName" : [ {
+    "@value" : "Sarah Williams"
+  } ],
+  "http://www.example.org/elearning-ontology#studentID" : [ {
+    "@value" : "STU-1007"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Submission",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Represents a student's completed work submitted in response to an assignment for evaluation and grading."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Submission"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Submission_Emily_Assignment1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#hasFeedback" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Feedback_Emily_Assignment1"
+  } ],
+  "http://www.example.org/elearning-ontology#hasGrade" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Grade_Emily_Assignment1"
+  } ],
+  "http://www.example.org/elearning-ontology#submissionDate" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2026-05-04T14:20:00"
+  } ],
+  "http://www.example.org/elearning-ontology#submissionFor" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment_InitialOntology"
+  } ],
+  "http://www.example.org/elearning-ontology#submittedBy" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student_EmilyParker"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Submission_Fatma_Repo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#hasGrade" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Grade_Fatma_Repo"
+  } ],
+  "http://www.example.org/elearning-ontology#submissionDate" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2026-04-28T10:30:00"
+  } ],
+  "http://www.example.org/elearning-ontology#submissionFor" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment_GitHubRepo"
+  } ],
+  "http://www.example.org/elearning-ontology#submittedBy" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student_FatmaAlsaghir"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Submission_Heydar_Repo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#hasFeedback" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Feedback_Heydar_Repo"
+  } ],
+  "http://www.example.org/elearning-ontology#hasGrade" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Grade_Heydar_Repo"
+  } ],
+  "http://www.example.org/elearning-ontology#submissionDate" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2026-05-03T18:00:00"
+  } ],
+  "http://www.example.org/elearning-ontology#submissionFor" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment_GitHubRepo"
+  } ],
+  "http://www.example.org/elearning-ontology#submittedBy" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student_HeydarMehdizade"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Submission_Jalil_SpecDoc",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#hasFeedback" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Feedback_Jalil_SpecDoc"
+  } ],
+  "http://www.example.org/elearning-ontology#hasGrade" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Grade_Jalil_SpecDoc"
+  } ],
+  "http://www.example.org/elearning-ontology#submissionDate" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2026-05-07T08:15:00"
+  } ],
+  "http://www.example.org/elearning-ontology#submissionFor" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment_SpecDoc"
+  } ],
+  "http://www.example.org/elearning-ontology#submittedBy" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student_JalilGuliyev"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#LateSubmission"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#Submission_James_SpecDoc",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.example.org/elearning-ontology#hasFeedback" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Feedback_James_SpecDoc"
+  } ],
+  "http://www.example.org/elearning-ontology#hasGrade" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Grade_James_SpecDoc"
+  } ],
+  "http://www.example.org/elearning-ontology#submissionDate" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "@value" : "2026-05-05T09:45:00"
+  } ],
+  "http://www.example.org/elearning-ontology#submissionFor" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment_SpecDoc"
+  } ],
+  "http://www.example.org/elearning-ontology#submittedBy" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student_JamesAnderson"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#assignmentTitle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The human-readable title of an Assignment, as it appears on the course syllabus."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "assignment title"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#courseCode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The unique code identifying a Course (e.g. CS-550)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "course code"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#courseTitle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The full title of a Course."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "course title"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#dueDate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The deadline date and time for an Assignment. A Submission whose submissionDate exceeds this value is classified as a LateSubmission."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "due date"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#employeeID",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The unique institutional employee identifier assigned to an Instructor."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Instructor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "employee ID"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#enrolledIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a Student to the Course they are enrolled in."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "enrolled in"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#hasStudent"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#feedbackText",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The written qualitative feedback text provided by an instructor on a Submission."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Feedback"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "feedback text"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#hasAssignment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a Course to its Assignments."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has assignment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#isAssignmentOf"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#hasEmail",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The institutional email address of a Person (Student or Instructor)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has email"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#hasFeedback",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a Submission to the qualitative Feedback provided by the instructor upon evaluation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has feedback"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Feedback"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#isFeedbackFor"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#hasGrade",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a Submission to its Grade. Functional: each Submission has at most one Grade."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has grade"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Grade"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#hasLearningObjective",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a Course to its associated LearningObjective individuals, representing the intended learning goals of the course."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has learning objective"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#LearningObjective"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#isLearningObjectiveOf"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#hasModule",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a Course to its Modules."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has module"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Module"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#isModuleOf"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#hasName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The full name of a Person (Student or Instructor)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#hasPrerequisite",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a Course to its prerequisite Course(s). Transitive: if A requires B and B requires C, then A requires C."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has prerequisite"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#hasStudent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Inverse of enrolledIn. Relates a Course to its enrolled Students."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has student"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#hasSubmission",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Inverse of submissionFor. Relates an Assignment to its Submissions."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has submission"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#submissionFor"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#isAssignmentOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Inverse of hasAssignment. Relates an Assignment back to the Course it belongs to."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is assignment of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#isFeedbackFor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Inverse of hasFeedback. Relates a Feedback individual back to the Submission it was given for."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Feedback"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is feedback for"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#isLearningObjectiveOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Inverse of hasLearningObjective. Relates a LearningObjective back to its Course."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#LearningObjective"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is learning objective of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#isModuleOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Inverse of hasModule. Relates a Module back to the Course it belongs to."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Module"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is module of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#isTaughtBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Inverse of teaches. Relates a Course to its Instructor. Functional: each Course has at most one Instructor."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is taught by"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Instructor"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#teaches"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#maxScore",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The maximum achievable score for an Assignment, used to contextualise a student Grade."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "max score"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#moduleDescription",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A brief human-readable description of the topics and learning content covered in a Module."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Module"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "module description"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#moduleOrder",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The sequential position of a Module within its Course (1-based index)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Module"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "module order"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#moduleTitle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The title of a Module within a Course."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Module"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "module title"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#score",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The numerical score associated with a Grade."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Grade"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "score"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#studentID",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The unique institutional student identifier assigned to a Student."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "student ID"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#submissionDate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The date and time when a Submission was received by the system."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "submission date"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#submissionFor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a Submission to the Assignment it was submitted for. Functional: each Submission targets exactly one Assignment."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "submission for"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Assignment"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#submits",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates a Student to the Submission they submitted."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "submits"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#submittedBy"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#submittedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Inverse of submits. Relates a Submission to the Student who submitted it. Functional: each Submission belongs to exactly one Student."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Submission"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "submitted by"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Student"
+  } ]
+}, {
+  "@id" : "http://www.example.org/elearning-ontology#teaches",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Relates an Instructor to the Course they teach."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Instructor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "teaches"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.example.org/elearning-ontology#Course"
+  } ]
+} ]
